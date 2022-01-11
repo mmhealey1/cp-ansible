@@ -9,6 +9,13 @@
     gather_subset:
       - '!all'
 
+- name: Gather OS Facts
+  tags: certificate_authority
+  setup:
+    filter: ansible_os_family
+    gather_subset:
+      - '!all'
+
 - name: Register if CA Key Exists on Ansible Controller
   tags: certificate_authority
   stat:
